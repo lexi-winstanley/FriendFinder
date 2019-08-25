@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,32 +8,48 @@
   <title>Friend Finder</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/images/friendFinderFavicon.png">
+  <style>
+    #logo {
+      margin: 0 .5rem .5rem 0;
+      height: 2.5rem;
+    }
+    .btn-primary {
+      background-color: #2e64b0;
+      border-color: #2e64b0;
+    }
+  </style>
 </head>
+
 <body>
 
   <div class="container">
 
     <div class="jumbotron">
-      <h1 class="text-left"><span class="fa fa-fire"></span> Friend Finder</h1>
+      <h1 class="text-left"><img id="logo" src="/assets/images/FriendFinder.svg"
+          alt="Friend Finder logo: 1 upright F and 1 upside down F on a blue background">Friend Finder</h1>
       <hr>
       <h2 class="text-left">Answer a few basic questions.</h2>
       <h2 class="text-left">Then find the friend with the greatest compatibility!</h2>
       <br>
 
       <div class="text-left">
-        <a href="/survey"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> Go to Survey</button></a>
+        <a href="/survey"><button class="btn btn-lg btn-primary"><span class="fa fa-list-alt"></span> Go to
+            Survey</button></a>
       </div>
 
     </div>
 
     <footer class="footer">
-        <div class="container">
-          <p><a href="/api/friends">API Friends List</a> | <a href="https://github.com/lexi-winstanley/FriendFinder">GitHub Repo</a></p>
-        </div>
-      </footer>
+      <div class="container">
+        <p><a href="/api/friends">API Friends List</a> | <a
+            href="https://github.com/lexi-winstanley/FriendFinder">GitHub Repo</a></p>
+      </div>
+    </footer>
 
   </div>
 
 
 </body>
+
 </html>
