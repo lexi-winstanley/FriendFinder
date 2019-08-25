@@ -9,7 +9,6 @@ module.exports = function (app) {
 
     app.post("/api/friends", function (req, res) {
         friendsData.push(req.body);
-        console.log(req.body);
         res.json(friendsData[findMatch()]);
     });
 }
@@ -22,7 +21,6 @@ function findMatch() {
         let currentComparison = friendsData[i].scores;
         for (let j = 0; j < 10; j++) {
             sumDifferences += Math.abs(currentUserScores[j] - currentComparison[j]);
-            console.log(sumDifferences);
         }
         arrayDifferences.push({ friendsIndex: i, differenceToUser: sumDifferences });
     }
@@ -32,9 +30,6 @@ function findMatch() {
         if (arrayDifferences[k].differenceToUser < minDifference) {
             minDifference = arrayDifferences[k].differenceToUser;
             minDifferenceIndex = arrayDifferences[k].friendsIndex;
-            console.log(arrayDifferences[k].differenceToUser);
-            console.log(arrayDifferences[k].friendsIndex);
-            console.log(minDifference);
         }
     }
     return minDifferenceIndex;

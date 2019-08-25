@@ -13,9 +13,11 @@
     .answerOptions {
       width: 40%;
     }
+
     #bestMatchPhoto {
       width: 100%;
     }
+
     .btn-primary {
       background-color: #2e64b0;
       border-color: #2e64b0;
@@ -224,10 +226,11 @@
       event.preventDefault();
       let valid = true;
       $('.form-control').each(function () {
-        if (this.val === '') {
+        if (this.val === '' || this.val === undefined) {
           valid = false;
         }
       });
+      console.log(valid);
       if (valid) {
         let userAnswers = {
           name: $('#name').val(),
@@ -245,13 +248,23 @@
             $('#question10').val()
           ]
         };
-        console.log(userAnswers);
         $.post('/api/friends', userAnswers).then(function (serverData) {
-          JSON.stringify(serverData);
-          console.log(serverData);
           $('#bestMatchName').text(serverData.name);
           $('#bestMatchPhoto').attr('src', serverData.photo);
           $('#resultModal').modal('toggle');
+          $('#question1').val('');
+          $('#question1').formSelect();
+          $('#question2').val('');
+          $('#question3').val('');
+          $('#question4').val('');
+          $('#question5').val('');
+          $('#question6').val('');
+          $('#question7').val('');
+          $('#question8').val('');
+          $('#question9').val('');
+          $('#question10').val('');
+          $('#name').val('');
+          $('#photo').val('');
         });
       } else {
         $('#errorModal').modal('toggle');
