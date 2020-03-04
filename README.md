@@ -1,5 +1,4 @@
 # FriendFinder
-# Train Schedule
 [View Live](https://afternoon-falls-93974.herokuapp.com/)
 
 ## Motivation 
